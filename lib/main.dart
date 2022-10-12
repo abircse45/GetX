@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_part1/screen/home_page.dart';
+import 'package:getx_part1/local_data/user_shared_pref.dart';
+import 'screen/local_data_view.dart';
 
-void main() {
+Future main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await UserSharedPreference().intiSharedPref();
   runApp(const MyApp());
 }
 
@@ -18,7 +21,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home: const LocalDatView(),
     );
   }
 }

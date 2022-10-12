@@ -20,6 +20,7 @@ class DataController extends GetxController {
     var allserverdata = await _serverGetData.getData();
     if (allserverdata != null) {
       getModelList.value.addAll(allserverdata);
+
       update();
       loader.value = false;
     }
